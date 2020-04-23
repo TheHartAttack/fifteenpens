@@ -10,6 +10,7 @@ const sanitizeHTML = require('sanitize-html')
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
+app.use("/public", express.static('public'));
 app.use('/api', require('./router-api'))
 
 let sessionOptions = session({
